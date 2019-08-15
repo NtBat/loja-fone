@@ -1,25 +1,25 @@
 header {
-  background-color: #e24647;
-  color: #fff;
-  display: flex;
-  align-items: center;
+  color: $primary-color;
+  @include align-x;
   justify-content: space-between;
-  margin: 0 115px;
-  padding: 60px 60px 95px 60px;
-}
 
-h1 {
-  font-size: 40px;
-  font-family: Arial, "Roboto", sans-serif;
-  text-transform: uppercase;
-}
+  .logo {
+    font-size: 40px;
+    font-family: Arial, "Roboto", sans-serif;
+    text-transform: uppercase;
+  }
 
-nav {
-  font-size: 21px;
-  font-family: "Segoe UI", "Roboto", sans-serif;
-}
+  nav {
+    font-size: 21px;
+    font-family: "Segoe UI", "Roboto", sans-serif;
 
-a {
-  text-decoration: none;
-  color: inherit;
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:not(:last-child) {
+        margin-right: 28px;
+      }
+    }
+  }
 }
