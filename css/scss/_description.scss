@@ -5,15 +5,43 @@
   display: inline-block;
   width: 554px;
 
+  dl {
+    position: relative;
+  }
+
   .title {
     font-size: 25px;
     margin-bottom: 50px;
+  }
+
+  .item.-heart {
+    position: absolute;
+    transform: translateX(-100%);
+    top: 5px;
+    left: -48px;
+    cursor: pointer;
+    transition: transform 100ms linear;
+
+    img {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 
   .stars {
     display: flex;
     margin-bottom: 25px;
     cursor: pointer;
+
+    .-icon {
+      cursor: pointer;
+      transition: transform 100ms linear;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
 
     img {
       margin-right: 9px;
