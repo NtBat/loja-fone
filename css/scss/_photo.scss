@@ -1,3 +1,8 @@
 .image-product {
-  float: left;
+  display: inline-block;
+  height: 554px;
+  background-color: $primary-color;
+  border-top-right-radius: 150px;
+  border-bottom-right-radius: 150px;
+  margin-right: 167px;
 }
