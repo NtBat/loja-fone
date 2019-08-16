@@ -2,9 +2,14 @@ header {
   color: $primary-color;
   @include align-x;
   justify-content: space-between;
-  margin-bottom: 138px;
+  margin-bottom: 60px;
   padding-left: 60px;
   font-weight: 100;
+  padding-right: 60px;
+
+  @include respond(tab-land) {
+    margin-bottom: 138px;
+  }
 
   .logo {
     font-size: 40px;
@@ -15,11 +20,17 @@ header {
   nav {
     font-size: 21px;
     font-family: "Segoe UI", "Roboto", sans-serif;
+    display: none;
+
+    @include respond(tab-land) {
+      display: block;
+    }
 
     a {
       text-decoration: none;
       color: inherit;
-      transition: all 5s linear;
+      padding-bottom: 8px;
+      position: relative;
 
 
       &:not(:last-child) {
@@ -27,8 +38,22 @@ header {
       }
 
       &:hover {
-        border-bottom: 1px solid $primary-color;
-        transition: all 1s linear;
+        &:after {
+          width: 100%;
+          left: 0
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 4px;
+        left: 50%;
+        bottom: 0px;
+        background-color: $primary-color;
+        transition: all 0.3s ease;
+        z-index: 74;
       }
     }
   }
@@ -38,12 +63,13 @@ header {
       background: transparent;
       border: none;
       border-bottom: 2px solid $primary-color;
-      width: 358px;
+      width: 250px;
       padding: 8px;
       color: inherit;
       font-size: 20px;
       font-weight: inherit;
-      font-family: inherit;
+      font-family: "Roboto", sans-serif;
+      display: none;
 
       &::placeholder {
         color: $primary-color;
@@ -51,6 +77,73 @@ header {
         font-weight: 100;
         font-family: "Roboto", sans-serif;
       }
+
+      @include respond(tab-land) {
+        display: block;
+      }
+
+      @include respond(desktop) {
+        width: 358px;
+      }
+    }
+  }
+
+  .open-mobile {
+    position: relative;
+
+    .cd-nav-trigger.nav-is-visible {
+      span {
+        background: rgba(255, 255, 255, 0);
+
+        &:before {
+          transform: translateX(4px) translateY(-3px) rotate(45deg);
+        }
+
+        &:after {
+          transform: translateX(4px) translateY(2px) rotate(-45deg);
+        }
+      }
+    }
+
+    a {
+      color: transparent;
+
+      span {
+        position: absolute;
+        display: inline-block;
+        height: 3px;
+        width: 24px;
+        background: $primary-color;
+        transition: background 0.2s;
+
+        &:before,
+        &:after {
+          position: absolute;
+          display: inline-block;
+          height: 3px;
+          width: 24px;
+          background: $primary-color;
+          content: "";
+          right: 0;
+          transform: translateZ(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          transform-origin: 0 50%;
+          transition: transform 0.2s
+        }
+
+        &:before {
+          top: -6px
+        }
+
+        &:after {
+          top: 6px;
+        }
+      }
+    }
+
+    @include respond(tab-land) {
+      display: none;
     }
   }
 }

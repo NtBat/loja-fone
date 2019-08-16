@@ -3,7 +3,13 @@
   font-family: "Roboto", sans-serif;
   font-weight: 100;
   display: inline-block;
-  width: 554px;
+
+  padding: 60px;
+
+  @include respond(desktop) {
+    padding: 60px;
+    width: 554px;
+  }
 
   dl {
     position: relative;
@@ -18,9 +24,14 @@
     position: absolute;
     transform: translateX(-100%);
     top: 5px;
-    left: -48px;
+    right: -20px;
     cursor: pointer;
     transition: transform 100ms linear;
+
+    @include respond(desktop) {
+      right: initial;
+      left: -48px;
+    }
 
     img {
       &:hover {

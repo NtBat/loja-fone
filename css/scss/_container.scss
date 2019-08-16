@@ -1,14 +1,30 @@
 .container {
-  width: 80%;
-  padding: 55px 60px 95px 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 55px 0 95px 0;
   background-color: $thirdy-color;
-  position: absolute;
-  left: 50%;
-  top: 65%;
-  transform: translateX(-50%) translateY(-50%);
+  position: static;
+
+  @include respond(desktop) {
+    padding: 55px 60px 95px 0;
+  }
+
+  @include respond(big-desktop) {
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
 
   .product-info {
-    @include align-x;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(desktop) {
+      align-items: center;
+      flex-direction: initial;
+      justify-content: space-between;
+    }
   }
 }
