@@ -32,11 +32,11 @@ header {
       border: none;
       border-bottom: 2px solid $primary-color;
       width: 358px;
-      padding: 10px;
-      color: $primary-color;
+      padding: 8px;
+      color: inherit;
       font-size: 20px;
-      font-weight: 100;
-      font-family: "Roboto", sans-serif;
+      font-weight: inherit;
+      font-family: inherit;
 
       &::placeholder {
         color: $primary-color;
