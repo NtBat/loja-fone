@@ -2,10 +2,11 @@ header {
   color: $primary-color;
   @include align-x;
   justify-content: space-between;
+  margin-bottom: 138px;
 
   .logo {
     font-size: 40px;
-    font-family: Arial, "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
   }
 
