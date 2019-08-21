@@ -40,6 +40,22 @@
         transform: scale(1.2);
       }
     }
+
+    .heart-image {
+      &.-active {
+        display: none;
+      }
+    }
+
+    &.-active {
+      .heart-image {
+        display: none;
+      }
+
+      .heart-image.-active {
+        display: block;
+      }
+    }
   }
 
   .stars {

@@ -4,7 +4,9 @@ const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer"); // Criar os auto prefixos ( webkit )
 const browserSync = require("browser-sync").create();
 const concat = require("gulp-concat"); // Junta os arquivos JS em um arquivo só
-const uglify = require("gulp-uglify"); // Minificar o JS
+const uglifyes = require('uglify-es');
+const composer = require('gulp-uglify/composer');
+const uglify = composer(uglifyes, console);
 const imagemin = require("gulp-imagemin"); // Minificar as imagens
 
 // Função para compilar o SASS e adicionar os prefixos
