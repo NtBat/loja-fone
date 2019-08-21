@@ -59,16 +59,37 @@
   }
 
   .stars {
-    display: flex;
     margin-bottom: 25px;
-    cursor: pointer;
+
+    .star-list {
+      &.-active {
+        &>.-icon {
+          display: none;
+        }
+
+        &>.-active {
+          display: block;
+        }
+      }
+    }
+
+    ol {
+      display: flex;
+      cursor: pointer;
+      height: 30px;
+    }
 
     .-icon {
       cursor: pointer;
       transition: transform 100ms linear;
+      display: block;
 
       &:hover {
         transform: scale(1.2);
+      }
+
+      &.-active {
+        display: none;
       }
     }
 
